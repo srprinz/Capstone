@@ -1,0 +1,100 @@
+
+# NOT CSP EXAMPLE !!!
+# SAMPLE CAPSTONE PROJECT EXAMPLE
+# Oct 14, 2020
+
+# GENRE MAP
+funk = 0
+rock = 1
+reggae = 2
+r_b = 3
+rap = 4
+pop = 5
+jazz = 6
+electronic = 7
+
+# NOLA dictionary venue genres (hand built in atm), non-amendable
+venue_list = {'tipitinas':[0],
+              'house_of_blues':[4,5,1],
+              'preservation_hall':[6,3,4],
+              'gasa_gasa':[1,3,4],
+              'howlin_wolf':[0,3,4],
+              'republic':[7,4,5],
+              'dragons_den':[1,6,7],
+              'hi_ho_lounge':[1,7,0],
+              'siberia':[1,7,0]}
+
+# NOLA dictionary venue sizes (hand built in atm), non-amendable
+venue_size_list = {'tipitinas':139357,
+              'house_of_blues':1582295,
+              'preservation_hall':239321,
+              'gasa_gasa':73166,
+              'howlin_wolf':477888,
+              'republic':701591,
+              'dragons_den':7499,
+              'hi_ho_lounge':1345,
+              'siberia':20134}
+
+#
+#
+# FUNCTION TO ADD ELEMENTS TO DICT
+#
+
+def append_value(dict_obj, key, value):
+    if key in dict_obj:
+        if not isinstance(dict_obj[key], list):
+            dict_obj[key] = [dict_obj[key]]
+        dict_obj[key].append(value)
+    else:
+        dict_obj[key] = value
+
+#
+# GENRE CHECK FUNCTION
+# if artist genre identity is a match for venue genre, match (loose constraints)
+#
+
+def genre_check(constraint):
+    print('in genre check function')
+    genre_filtered_dictionary = {}
+
+    # iterate through artist's given constraints O(n)
+    for i in constraint:
+        for key, value in venue_list.items():
+            for j in value:
+                if i == j:
+                    append_value(genre_filtered_dictionary, key, value)
+                else:
+                    pass
+
+    print('genre match :', genre_filtered_dictionary)
+
+def size_match(constraint1):
+    print('in size match function')
+    size_filtered_dictionary = {}
+
+    # iterate through artist's given constraints O(n)
+    for key, value in venue_size_list.items():
+        if value-100000 <= constraint1 <= value+100000:
+            append_value(size_filtered_dictionary, key, value)
+        else:
+            pass
+
+    print('size filtered dictionary :', size_filtered_dictionary)
+
+def main():
+
+    # TEST FOR FUNKY, ROCK BAND
+    artist_genre = [0,1]
+    artist_size = 100000
+    #print('venue_list ORIGINAL: ', venue_list)
+
+    # CHANGE TO PRIORITY MATCH EVENTUALLY
+    # want the funky, rock to print as priority
+    # one match less priority
+    # no match - no priority
+    genre_check(artist_genre)
+    size_match(artist_size)
+
+main()
+
+
