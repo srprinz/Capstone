@@ -81,6 +81,41 @@ def size_match(constraint1):
 
     print('size filtered dictionary :', size_filtered_dictionary)
 
+
+
+## NOT WORKING ##
+
+def final_dict(x, y):
+	  #x =size/ y=genre
+    #combined_dict={}
+    perfect_match_dict = {}
+    good_match_dict = {}
+
+    size_dict = size_match(x)
+    #print(size_dict)
+    genre_dict = genre_check(y)
+    #print(genre_dict)
+
+    for key1, value1 in size_dict.items():
+      for key2, value2 in genre_dict.items():
+        if key1 == key2:
+          value2.append(value1)
+          append_value(perfect_match_dict, key1, value2)
+
+        else:
+          append_value(good_match_dict, key1, value1)
+          append_value(good_match_dict, key2, value2)
+
+    print('perfect: ', perfect_match_dict)
+    print('good: ', good_match_dict)
+
+					#append_value(genre_filtered_dictionary, key, value)
+				
+pass
+
+
+
+
 def main():
 
     # TEST FOR FUNKY, ROCK BAND
