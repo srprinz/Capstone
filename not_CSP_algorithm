@@ -2,6 +2,7 @@
 # NOT CSP EXAMPLE !!!
 # SAMPLE CAPSTONE PROJECT EXAMPLE
 # Oct 14, 2020
+import math
 
 # GENRE MAP
 funk = 0
@@ -117,8 +118,8 @@ def final_dict(x, y):
  
 	  #x =size/ y=genre
     #combined_dict={}
-    #perfect_match_dict = {}
-    #good_match_dict = {}
+    perfect_match_dict = {}
+    good_match_dict = {}
 
     size_dict = size_match(x)
     #print(size_dict)
@@ -127,11 +128,24 @@ def final_dict(x, y):
     
     result = merge_dicts(genre_dict,size_dict)
     print("final:",result)
+    for key, value in result.items():
+      if len(value)==2:
+        perfect_match_dict[key]=value
+      else:
+       good_match_dict[key]=value
 
-    #print('perfect: ', perfect_match_dict)
-    #print('good: ', good_match_dict)
-				
-pass
+    print('perfect: ', perfect_match_dict)
+    print('good: ', good_match_dict)
+		
+    return perfect_match_dict
+
+def percentage(d,size1):
+  for key,value in d.items():
+    num=value[1]
+    difference=abs(num-size1)
+    per=difference/size1
+    percentage1=1-per
+    print (key, ":","{0:.0f}%".format(percentage1*100), "match")
 
 
 def main():
@@ -148,7 +162,7 @@ def main():
     #genre_check(artist_genre)
     #size_match(artist_size)
 
-    final_dict(artist_size, artist_genre)
+    perfect=final_dict(artist_size, artist_genre)
+    print(percentage(perfect,artist_size))
 
 main()
-
