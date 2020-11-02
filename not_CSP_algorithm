@@ -147,6 +147,9 @@ def percentage(d,size1):
     percentage1=1-per
     print (key, ":","{0:.0f}%".format(percentage1*100), "match")
 
+'''
+
+DO NOT NEED THIS MAIN FUNCTION ANYMORE
 
 def main():
 
@@ -166,3 +169,12 @@ def main():
     print(percentage(perfect,artist_size))
 
 main()
+'''
+
+artist_genre = df.mapped_genre[0]
+print("artist genre: ", artist_genre)
+artist_size = df.followers[0]
+print("artist size: ", artist_size)
+
+perfect = final_dict(artist_size, artist_genre)
+print(percentage(perfect,artist_size))
