@@ -1,0 +1,60 @@
+
+# NOT CSP EXAMPLE !!!
+# SAMPLE CAPSTONE PROJECT EXAMPLE
+# Oct 14, 2020
+import math
+
+#
+# FUNCTION TO ADD ELEMENTS TO DICT
+#
+
+def append_value(dict_obj, key, value):
+    if key in dict_obj:
+        if not isinstance(dict_obj[key], list):
+            dict_obj[key] = [dict_obj[key]]
+        dict_obj[key].append(value)
+    else:
+        dict_obj[key] = value
+
+
+#
+# GENRE CHECK FUNCTION
+# if artist genre identity is a match for venue genre, match (loose constraints)
+#
+
+def genre_check(constraint):
+    #print('in genre check function')
+    genre_filtered_dictionary = {}
+
+    # iterate through artist's given constraints O(n)
+    for i in constraint:
+        for key, value in venue_list.items():
+            for j in value:
+                if i == j:
+                    append_value(genre_filtered_dictionary, key, value)
+                else:
+                    pass
+
+    return genre_filtered_dictionary
+
+def size_match_percentage(d,size_of):
+  perfect_match_dict={}
+  for key,value in d.items():
+    num=value
+    difference=abs(num-size_of)
+    per=difference/size_of
+    percentage1=1-per
+    if (percentage1>=.55):
+      perfect_match_dict[key]="{0:.0f}%".format(percentage1*100)
+      None
+  return perfect_match_dict
+    
+
+artist_genre = df.mapped_genre[0]
+print("artist genre: ", artist_genre)
+artist_size = df.followers[0]
+print("artist size: ", artist_size)
+
+## NEED TO FIX THIS LINE
+perfect = genre_check()
+print(size_match_percentage(perfect,artist_size))
