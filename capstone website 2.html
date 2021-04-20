@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+  <head>
+    <title>Plan Your Tour!</title>
+    <meta charset = "UTF-8" />
+  </head>
+  <body>
+    <h1>Plan Your Tour</h1>
+    <form>
+      <fieldset>
+        <legend>Inputs</legend>
+        <p>
+          <label>Enter you band name:</label>
+          <input type = "text"
+                 id = "myText"
+        
+        </p>
+        <p>
+          <label>Enter your Spotify ID <b>(optional)</b>:</label>
+          <input>
+        </p>
+
+          <p>
+          <label>Enter your hometown:</label>
+          <input>
+        </p>
+
+        <p>
+          <label>Select your genre(s): </label>
+        </p>
+        <p>
+          <input type="checkbox" id="genre1" name="genre1" value="FUNK">
+		  <label for="genre1"> Funk</label><br>
+		  <input type="checkbox" id="genre2" name="genre2" value="Rock">
+		  <label for="genre2"> Rock</label><br>
+		  <input type="checkbox" id="genre3" name="genre3" value="Punk">
+		  <label for="genre3"> Punk</label><br>
+		  <input type="checkbox" id="genre4" name="genre4" value="Alternative">
+		  <label for="genre4"> Alternative</label><br>
+		  <input type="checkbox" id="genre5" name="genre5" value="Reggae">
+		  <label for="genre5"> Reggae</label><br>
+		  <input type="checkbox" id="genre6" name="genre6" value="R&B">
+		  <label for="genre6"> R&B</label><br>
+		  <input type="checkbox" id="genre7" name="genre7" value="Hip Hop">
+		  <label for="genre7"> Hip Hop</label><br>
+		  <input type="checkbox" id="genre8" name="genre8" value="Rap">
+		  <label for="genre8"> Rap</label><br>
+		  <input type="checkbox" id="genre9" name="genre9" value="Jazz">
+		  <label for="genre9"> Jazz</label><br>
+		  <input type="checkbox" id="genre10" name="genre10" value="Blues">
+		  <label for="genre10"> Blues</label><br>
+		  <input type="checkbox" id="genre11" name="genre11" value="Folk">
+		  <label for="genre11"> Folk</label><br>
+		  <input type="checkbox" id="genre12" name="genre12" value="Electronic">
+		  <label for="genre12"> Electronic</label><br>
+		  <input type="checkbox" id="genre13" name="genre13" value="House">
+		  <label for="genre13"> House</label><br>
+		  <input type="checkbox" id="genre14" name="genre14" value="Indie">
+		  <label for="genre14"> Indie</label><br>
+		   <input type="checkbox" id="genre15" name="genre15" value="Country">
+		  <label for="genre15"> Country</label><br>
+		  <input type="checkbox" id="genre16" name="genre16" value="Cajun">
+		  <label for="genre16"> Cajun</label><br>
+
+
+        </p>
+        
+        <p>
+        	<label for="drop down">Preference for Region?</label>
+			<select name="drop down" id="drop down">
+  				<option value="Yes">Yes</option>
+ 				<option value="No">No</option>
+			</select>
+
+        </p>
+
+         	
+         <p>
+          <label>Enter city/cities: <b>(Enter as: City, State Abreviation)</b>:</label>
+          <input>
+        </p>	        
+        
+
+         <p>
+         <label for='submit'> Plan your tour! </label><br>
+         </p>
+
+
+
+         <p>
+
+         	<input type="submit" id='submit' value="Submit">
+
+
+
+         	 </p>
+        <p><input id ="Submit" type = "button" value = 'clickme' /></p>
+
+
+
+        
+      </fieldset>
+          </form>
+<script>
+<script>
+var firstName; 
+var lastName; 
+function getBandName() {
+    return document.getElementById("myText").value;
+}
+
+function display() {
+    bandName = getBandName();
+    window.alert(bandName);
+
+} 
+ document.getElementById("Submit").onclick = display();
+
+</script>
+
+</script>
+  </body>
+</html>
